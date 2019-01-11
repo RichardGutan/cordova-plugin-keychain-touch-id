@@ -127,12 +127,14 @@ public class FingerprintUiHelper extends FingerprintManager.AuthenticationCallba
                 .getIdentifier("fingerprint_not_recognized", "string",
                         FingerprintAuth.packageName);
  
-        
         if (mAttempts > 2) {
+            CharSequence errorMessage = "Too many failed attempts.";
+            CharSequence errorCode = "ERROR_TOO_MANY_FAILED_ATTEMPTS";
+            showError(errorMessage);
             mIcon.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    mCallback.onError();
+                    mCallback.onError(errorCode);
                 }
             }, ERROR_TIMEOUT_MILLIS);
         } else {
@@ -197,6 +199,6 @@ public class FingerprintUiHelper extends FingerprintManager.AuthenticationCallba
 
         void onAuthenticated();
 
-        void onError();
+        void onError(CharSequence error);
     }
 }

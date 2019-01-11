@@ -41,8 +41,8 @@ import org.json.JSONObject;
     mCallbackContext.error("Cancelled");
   }
   
-  public static void onError() {
-    mCallbackContext.error("Error");
+  public static void onError(CharSequence error) {
+    mCallbackContext.error(error);
   }
 
 
