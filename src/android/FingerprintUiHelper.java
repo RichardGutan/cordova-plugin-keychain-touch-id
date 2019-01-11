@@ -103,7 +103,7 @@ public class FingerprintUiHelper extends FingerprintManager.AuthenticationCallba
     }
 
     @Override
-    public void onAuthenticationError(int errMsgId, CharSequence errString) {
+    public void onAuthenticationError(int errMsgId, final CharSequence errString) {
         if (!mSelfCancelled) {
             showError(errString);
             mIcon.postDelayed(new Runnable() {
@@ -129,7 +129,7 @@ public class FingerprintUiHelper extends FingerprintManager.AuthenticationCallba
  
         if (mAttempts > 2) {
             CharSequence errorMessage = "Too many failed attempts.";
-            CharSequence errorCode = "ERROR_TOO_MANY_FAILED_ATTEMPTS";
+            final CharSequence errorCode = "ERROR_TOO_MANY_FAILED_ATTEMPTS";
             showError(errorMessage);
             mIcon.postDelayed(new Runnable() {
                 @Override
