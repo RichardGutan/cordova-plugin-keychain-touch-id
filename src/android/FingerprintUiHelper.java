@@ -136,7 +136,7 @@ public class FingerprintUiHelper extends FingerprintManager.AuthenticationCallba
             mIcon.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    mCallback.onError(too_many_attempts_string);
+                    mCallback.onError();
                 }
             }, ERROR_TIMEOUT_MILLIS);
         } else {
