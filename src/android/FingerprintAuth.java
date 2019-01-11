@@ -40,6 +40,10 @@ import org.json.JSONObject;
   public static void onCancelled() {
     mCallbackContext.error("Cancelled");
   }
+  
+  public static void onError() {
+    mCallbackContext.error("Error");
+  }
 
 
   /**
