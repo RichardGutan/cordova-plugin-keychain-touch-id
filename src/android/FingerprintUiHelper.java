@@ -109,7 +109,7 @@ public class FingerprintUiHelper extends FingerprintManager.AuthenticationCallba
             mIcon.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    mCallback.onError();
+                    mCallback.onError(errString);
                 }
             }, ERROR_TIMEOUT_MILLIS);
         }
