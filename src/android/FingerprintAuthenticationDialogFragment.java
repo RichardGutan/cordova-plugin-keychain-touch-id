@@ -204,7 +204,8 @@ public class FingerprintAuthenticationDialogFragment extends DialogFragment
 
     @Override
     public void onError() {
-
+        FingerprintAuth.onError(errString);
+        dismissAllowingStateLoss();
     }
 
     @Override
