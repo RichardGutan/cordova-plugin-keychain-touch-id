@@ -126,13 +126,9 @@ public class FingerprintUiHelper extends FingerprintManager.AuthenticationCallba
         int fingerprint_not_recognized_id = mContext.getResources()
                 .getIdentifier("fingerprint_not_recognized", "string",
                         FingerprintAuth.packageName);
-        int fingerprint_too_many_attempts_id = mContext.getResources()
-                .getIdentifier("fingerprint_too_many_attempts", "string",
-                        FingerprintAuth.packageName);
-        final String too_many_attempts_string = mIcon.getResources().getString(
-                fingerprint_too_many_attempts_id);
-        if (mAttempts > 3) {
-            showError(too_many_attempts_string);
+ 
+        
+        if (mAttempts > 2) {
             mIcon.postDelayed(new Runnable() {
                 @Override
                 public void run() {
