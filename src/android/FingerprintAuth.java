@@ -42,7 +42,7 @@ import org.json.JSONObject;
   }
   
   public static void onError(CharSequence error) {
-    mCallbackContext.error(error);
+    mCallbackContext.error(error.toString());
   }
 
 
